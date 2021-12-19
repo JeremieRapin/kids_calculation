@@ -27,8 +27,15 @@ if __name__ == "__main__":
         default=Engine.COLUMN_NUMBERS,
         help="the number of column to display",
     )
+    parser.add_argument(
+        "--corrected",
+        dest="corrected",
+        action="store_true",
+        default=False,
+        help="display with correction",
+    )
 
     args = parser.parse_args()
-    engine = Engine(args.numbers, args.level, args.column)
+    engine = Engine(args.numbers, args.level, args.column, args.corrected)
     engine.generate()
     engine.display()

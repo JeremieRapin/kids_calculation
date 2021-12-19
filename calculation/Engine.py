@@ -16,7 +16,7 @@ LINE_LENGTH_MAX = 35
 class Engine:
     COLUMN_NUMBERS = 3
 
-    def __init__(self, numbers, level, columns=COLUMN_NUMBERS):
+    def __init__(self, numbers, level, columns=COLUMN_NUMBERS, corrected=False):
         self._numbers = numbers
         self._columns = columns
         self._calculations = set()
@@ -30,6 +30,7 @@ class Engine:
             Operators.UNITIES: Unities,
         }
         self._generator = Generator(level)
+        self._corrected = corrected
 
     def display(self):
         str = ""
@@ -41,6 +42,17 @@ class Engine:
 
         if str != "":
             print(str)
+
+        if self._corrected:
+            str = "\n\n"
+            for idx, calculation in enumerate(self._calculations):
+                str += f"{calculation.formatCorrectedString() :<{LINE_LENGTH_MAX}}"
+                if idx % self._columns == (self._columns - 1):
+                    print(str)
+                    str = ""
+
+            if str != "":
+                print(str)
 
     def generate(self):
         self._calculations.clear()

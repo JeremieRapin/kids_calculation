@@ -22,3 +22,9 @@ class Fraction(Division):
         self._b = choice([x for x in self._fractions])
         division.generateValues(generator, self._b)
         self._a = division.a
+
+    def formatCorrectedString(self):
+        return (
+            f"le {self._fractions[self._b]} de {self._a} = "
+            f"{int(self._a / self._b)}"
+        )

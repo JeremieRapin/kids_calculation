@@ -18,3 +18,9 @@ class Addition(Calculation):
             self._a = generator.newFromLevel()
             self._b = generator.newFromLevel()
             valid = self.isValid()
+
+    def formatCorrectedString(self):
+        return (
+            f"{self._a} {self._operator.value} {self._b} = "
+            f"{self._a + self._b}"
+        )

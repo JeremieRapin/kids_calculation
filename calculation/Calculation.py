@@ -31,6 +31,9 @@ class Calculation:
     def formatString(self):
         return f"{self._a} {self._operator.value} {self._b}"
 
+    def formatCorrectedString(self):
+        raise Exception("formatCorrectedString must be overloaded")
+
     def generateValues(self, generator):
         self._a = generator.new()
         self._b = generator.new()

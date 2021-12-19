@@ -7,17 +7,17 @@ Generate some mental calculations for improving kids ability.
 ## Usage
 
 ``` text
-usage: main.py [-h] [--numbers NUMBERS] [--level {easy,medium,pro,advanced}] [--column COLUMN]
+usage: main.py [-h] [--numbers NUMBERS] [--level {easy,medium,pro,advanced}] [--column COLUMN] [--corrected]
 
 Generate some calculations for kids
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   --numbers NUMBERS     number of calculations to generate (default: 100)
   --level {easy,medium,pro,advanced}
                         level of calculations (default: advanced)
-  --highest HIGHEST     the highest number to deal with (default: 10)
   --column COLUMN       the number of column to display (default: 3)
+  --corrected           display with correction (default: False)
 ```
 
 ### Level explanations

@@ -29,3 +29,9 @@ class Division(Calculation):
             if not self._b:
                 self._b = generator.newDivider()
             valid = self.isValid()
+
+    def formatCorrectedString(self):
+        return (
+            f"{self._a} {self._operator.value} {self._b} = "
+            f"{int(self._a / self._b)}"
+        )
